@@ -27,7 +27,7 @@ class multimodal_fusion_model:
     
     def get_model(self):
         if self.operator == 'autoencoder':
-            return multimodal_fusion_model.autoencoder_att_labels(self.num_classes, self.emb_size_1, self.emb_size_2)
+            return multimodal_fusion_model.autoencoder_att_labels(self.num_classes, self.emb_size_2, self.emb_size_1)
         else: # size_1, size_2,num_classes,operator='concatenate'
             return multimodal_fusion_model.multimodal_text_image(self.emb_size_1, self.emb_size_2, self.num_classes, operator=self.operator)
 
